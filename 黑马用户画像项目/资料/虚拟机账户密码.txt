@@ -1,0 +1,19 @@
+虚拟机、hue: root  123456
+
+------------------------
+hadoop/sbin/start-all.sh
+
+hadoop/sbin/mr-jobhistory-daemon.sh start historyserver
+
+nohup hive/bin/hive --service metastore &
+
+nohup hive/bin/hiveserver2 &
+
+!connect jdbc:hive2://bigdata-cdh01.itcast.cn:10000
+
+zookeeper/bin/zkServer.sh start
+
+hbase/bin/start-hbase.sh
+
+spark/sbin/start-history-server.sh
+
